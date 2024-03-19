@@ -1,23 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Por la vida, Linda</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por la vida, Linda</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #007bff;
+        }
+        /* Style for clickable sections */
+        .section-link {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <h1>Por la vida, Linda</h1>
-  <div class="sections">
-    <div class="section" onclick="showContent('joyful')">For when you're joyful</div>
-    <div class="section" onclick="showContent('proud')">For when you're proud</div>
-    <div class="section" onclick="showContent('sad')">For when you're sad</div>
-    <div class="section" onclick="showContent('angry')">For when you're angry</div>
-    <div class="section" onclick="showContent('lonely')">For when you're lonely</div>
-  </div>
-  <div id="content">
-    <!-- Content will be displayed here -->
-  </div>
-  <script src="script.js"></script>
+    <header>
+        <h1>Por la vida, Linda</h1>
+    </header>
+    <main>
+        <section id="joyful">
+            <h2><a class="section-link" href="#joyful">For when you're joyful</a></h2>
+            <p>Text content for joyful mood...</p>
+        </section>
+        <section id="proud">
+            <h2><a class="section-link" href="#proud">For when you're proud</a></h2>
+            <p>Text content for proud mood...</p>
+        </section>
+        <section id="sad">
+            <h2><a class="section-link" href="#sad">For when you're sad</a></h2>
+            <p>Text content for sad mood...</p>
+        </section>
+        <section id="angry">
+            <h2><a class="section-link" href="#angry">For when you're angry</a></h2>
+            <p>Text content for angry mood...</p>
+        </section>
+        <section id="lonely">
+            <h2><a class="section-link" href="#lonely">For when you're lonely</a></h2>
+            <p>Text content for lonely mood...</p>
+        </section>
+    </main>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
