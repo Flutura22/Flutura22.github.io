@@ -85,8 +85,12 @@
         link.addEventListener('click', function(event) {
             event.preventDefault();
             const sectionContent = this.parentElement.nextElementSibling.querySelector('.section-content');
-            // Toggle the display property between 'block' and 'none'
-            sectionContent.style.display = sectionContent.style.display === 'none' ? 'block' : 'none';
+            if (sectionContent) {
+                // Toggle the display property between 'block' and 'none'
+                sectionContent.style.display = sectionContent.style.display === 'none' ? 'block' : 'none';
+            } else {
+                console.error('Section content not found.');
+            }
         });
     });
 </script>
