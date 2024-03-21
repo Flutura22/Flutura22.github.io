@@ -26,6 +26,7 @@
             padding: 20px; /* Add padding for space within sections */
             border-radius: 10px; /* Add rounded corners for sections */
             text-align: center; /* Center-align section content */
+            display: none; /* Hide section content initially */
         }
         h1, h2, p, a {
             color: black; /* Set text color for h1, h2, p, and a */
@@ -81,14 +82,16 @@
         </section>
     </main>
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Toggle section visibility when clicking on section title
+        document.querySelectorAll('.section-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const sectionId = this.getAttribute('href').substring(1); // Get section ID without '#'
+                const section = document.getElementById(sectionId);
+                if (section.style.display === 'none') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
             });
         });
     </script>
