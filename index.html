@@ -84,8 +84,7 @@
     document.querySelectorAll('.section-link').forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
-            const sectionId = this.getAttribute('href').substring(1); // Get section ID from href attribute
-            const sectionContent = document.getElementById(sectionId); // Find section content by ID
+            const sectionContent = this.parentElement.nextElementSibling.querySelector('.section-content');
             if (sectionContent) {
                 // Toggle the display property between 'block' and 'none'
                 sectionContent.style.display = sectionContent.style.display === 'none' ? 'block' : 'none';
