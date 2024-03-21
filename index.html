@@ -59,24 +59,24 @@
     </header>
     <main>
         <section id="joyful">
-            <h2><a class="section-link" href="#">For when you're joyful</a></h2>
-            <p class="section-content">This is the text content for when you're joyful. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <h2><a class="section-link" data-target="joyful" href="#">For when you're joyful</a></h2>
+            <p class="section-content" data-target="joyful-content">This is the text content for when you're joyful. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         </section>
         <section id="proud">
-            <h2><a class="section-link" href="#">For when you're proud</a></h2>
-            <p class="section-content">This is the text content for when you're proud. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <h2><a class="section-link" data-target="proud" href="#">For when you're proud</a></h2>
+            <p class="section-content" data-target="proud-content">This is the text content for when you're proud. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         </section>
         <section id="sad">
-            <h2><a class="section-link" href="#">For when you're sad</a></h2>
-            <p class="section-content">This is the text content for when you're sad. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <h2><a class="section-link" data-target="sad" href="#">For when you're sad</a></h2>
+            <p class="section-content" data-target="sad-content">This is the text content for when you're sad. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
         </section>
         <section id="angry">
-            <h2><a class="section-link" href="#">For when you're angry</a></h2>
-            <p class="section-content">This is the text content for when you're angry. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</p>
+            <h2><a class="section-link" data-target="angry" href="#">For when you're angry</a></h2>
+            <p class="section-content" data-target="angry-content">This is the text content for when you're angry. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</p>
         </section>
         <section id="lonely">
-            <h2><a class="section-link" href="#">For when you're lonely</a></h2>
-            <p class="section-content">This is the text content for when you're lonely. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</p>
+            <h2><a class="section-link" data-target="lonely" href="#">For when you're lonely</a></h2>
+            <p class="section-content" data-target="lonely-content">This is the text content for when you're lonely. You can write whatever you want to convey about this mood here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. .</p>
         </section>
     </main>
 <script>
@@ -84,10 +84,11 @@
     document.querySelectorAll('.section-link').forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
-            const sectionContent = this.parentElement.nextElementSibling.querySelector('.section-content');
+            const targetId = this.getAttribute('data-target');
+            const sectionContent = document.querySelector(`[data-target="${targetId}-content"]`);
             if (sectionContent) {
                 // Toggle the display property between 'block' and 'none'
-                sectionContent.style.display = sectionContent.style.display === 'none' ? 'block' : 'none';
+                sectionContent.style.display = sectionContent.style.display === 'none' || sectionContent.style.display === '' ? 'block' : 'none';
             } else {
                 console.error('Section content not found.');
             }
