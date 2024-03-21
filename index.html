@@ -82,7 +82,8 @@
     <script>
         // Toggle section visibility when clicking on section title
         document.querySelectorAll('.section-link').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
                 const sectionContent = this.parentElement.nextElementSibling.querySelector('.section-content');
                 if (sectionContent.style.display === 'none' || sectionContent.style.display === '') {
                     sectionContent.style.display = 'block';
