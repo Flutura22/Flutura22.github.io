@@ -1,99 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Por la vida, Linda</title>
-    <style>
-        /* Add your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5dc; /* Change background color to beige */
-            color: black; /* Set text color to black */
-        }
-        header {
-            background-color: #ffd966; /* Set different background color for header */
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 30px;
-            padding: 20px; /* Add padding for space within sections */
-            border-radius: 10px; /* Add rounded corners for sections */
-            text-align: center; /* Center-align section content */
-        }
-        h1, h2, p, a {
-            color: black; /* Set text color for h1, h2, p, and a */
-        }
-        /* Style for clickable sections */
-        .section-link {
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /* Different background colors for sections */
-        #joyful {
-            background-color: #add8e6; /* Set pastel blue background color for joyful section */
-        }
-        #proud {
-            background-color: #ffb6c1; /* Set pastel pink background color for proud section */
-        }
-        #sad {
-            background-color: #e6e6fa; /* Set lavender background color for sad section */
-        }
-        #angry {
-            background-color: #98fb98; /* Set pastel green background color for angry section */
-        }
-        #lonely {
-            background-color: #ffcccb; /* Set pastel peach background color for lonely section */
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Por la vida, Linda</h1>
-    </header>
-    <main>
-        <section id="joyful">
-            <h2><a class="section-link" href="#joyful">For when you're joyful</a></h2>
-            <p>This is the text content for when you're joyful. You can write whatever you want to convey about this mood here.</p>
-        </section>
-        <section id="proud">
-            <h2><a class="section-link" href="#proud">For when you're proud</a></h2>
-            <p>This is the text content for when you're proud. You can write whatever you want to convey about this mood here.</p>
-        </section>
-        <section id="sad">
-            <h2><a class="section-link" href="#sad">For when you're sad</a></h2>
-            <p>This is the text content for when you're sad. You can write whatever you want to convey about this mood here.</p>
-        </section>
-        <section id="angry">
-            <h2><a class="section-link" href="#angry">For when you're angry</a></h2>
-            <p>This is the text content for when you're angry. You can write whatever you want to convey about this mood here.</p>
-        </section>
-        <section id="lonely">
-            <h2><a class="section-link" href="#lonely">For when you're lonely</a></h2>
-            <p>This is the text content for when you're lonely. You can write whatever you want to convey about this mood here.</p>
-        </section>
-    </main>
-    <script>
-        // Toggle section visibility when clicking on section title
-        document.querySelectorAll('.section-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const sectionId = this.getAttribute('href').substring(1); // Get section ID without '#'
-                const section = document.getElementById(sectionId);
-                if (section.style.display === 'none' || section.style.display === '') {
-                    section.style.display = 'block';
-                    section.style.backgroundColor = section.getAttribute('data-bg-color');
-                    section.querySelector('p').style.color = 'black';
-                } else {
-                    section.style.display = 'none';
-                }
-            });
-        });
-    </script>
-</body>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Basic Company Template for Bootstrap 3</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS for the 'One Page Wonder' Template -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">Start Bootstrap</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="header-image">
+
+      <div class="headline">
+        <div class="container">
+          <h1>One Page Wonder</h1>
+          <h2>Will Knock Your Socks Off</h2>
+        </div>
+      </div>
+
+    </div><!-- /header-image -->
+
+    <div class="container">
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="featurette" id="about">
+        <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+        <h2 class="featurette-heading">This First Heading <span class="text-muted">Will Catch Your Eye</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette" id="services">
+        <img class="featurette-image img-circle img-responsive pull-left" src="http://placecreature.com/500/500">
+        <h2 class="featurette-heading">The Second Heading <span class="text-muted">Is Pretty Cool Too.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette" id="contact">
+        <img class="featurette-image img-circle img-responsive pull-right" src="http://placecreature.com/500/500">
+        <h2 class="featurette-heading">The Third Heading <span class="text-muted">Will Seal the Deal.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <!-- /END THE FEATURETTES -->
+
+      <hr>
+
+      <!-- FOOTER -->
+      <footer>
+        <p>Copyright &copy; Company 2013</p>
+      </footer>
+      <!-- /END OF FOOTER -->
+
+    </div><!-- /container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+
 </html>
