@@ -10,9 +10,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('boooks.jpeg'); /* Background image for title */
-      background-size: cover;
-      background-position: center;
+      background-color: beige; /* Set background color to beige */
       color: black; /* Set text color to black */
     }
     header {
@@ -32,7 +30,10 @@
       padding: 20px;
       position: relative; /* Add position relative to allow z-index to work */
       z-index: 2; /* Ensure main content stays on top of background image */
-      background-color: black; /* Set background color to black */
+      background-image: url('Imazh.jpeg'); /* Background image for main content */
+      background-size: cover;
+      background-position: top;
+      min-height: 100vh; /* Set minimum height of main content to full viewport height */
     }
     h2, p {
       color: black; /* Set text color for h2, p, and a */
@@ -55,6 +56,7 @@
     }
     .section {
       margin-bottom: 30px;
+      padding: 20px; /* Add padding to sections */
     }
     .collapsible {
       padding: 15px; /* Add padding for space within sections */
