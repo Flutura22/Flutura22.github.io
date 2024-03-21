@@ -21,6 +21,7 @@
         text-align: center;
         position: relative; /* Add position relative to allow z-index to work */
         z-index: 1; /* Ensure header stays on top of background image */
+        border: 2px solid black; /* Add black border */
       }
       h1 {
         color: #f7dc6f; /* Set font color of h1 to #f7dc6f (pastel yellow) */
@@ -30,28 +31,9 @@
         position: relative; /* Add position relative to allow z-index to work */
         z-index: 2; /* Ensure main content stays on top of background image */
       }
-      h2,
-      p {
-        color: black; /* Set text color for h2, p, and a */
-      }
-      /* Different background colors for sections */
-      .joyful {
-        background-color: #f7dc6f; /* Set pastel blue background color for joyful section */
-      }
-      .proud {
-        background-color: #e6b668; /* Set pastel pink background color for proud section */
-      }
-      .sad {
-        background-color: #d4a15f; /* Set lavender background color for sad section */
-      }
-      .angry {
-        background-color: #c18956; /* Set pastel green background color for angry section */
-      }
-      .lonely {
-        background-color: #ac744d; /* Set pastel peach background color for lonely section */
-      }
       .section {
         margin-bottom: 30px;
+        border: 2px solid black; /* Add black border to sections */
       }
 
       .collapsible {
@@ -77,6 +59,7 @@
       header img {
         max-width: 100%;
         height: auto;
+        border: 2px solid black; /* Add black border to header image */
       }
     </style>
   </head>
