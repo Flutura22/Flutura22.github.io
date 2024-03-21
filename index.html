@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: black; /* Change background color to black */
-            color: black; /* Set text color to black */
+            color: white; /* Set text color to white */
         }
         header {
             background-color: #ffd966; /* Set different background color for header */
@@ -29,29 +29,28 @@
             display: none; /* Hide section content initially */
         }
         h1, h2, p, a {
-            color: black; /* Set text color for h1, h2, p, and a */
+            color: white; /* Set text color for h1, h2, p, and a */
         }
         /* Style for clickable sections */
         .section-link {
-            color: black; /* Set link color */
             text-decoration: none;
             cursor: pointer;
         }
         /* Different background colors for sections */
-        #joyful {
-            background-color: #add8e6; /* Set pastel blue background color for joyful section */
+        #joyful h2 {
+            color: #add8e6; /* Set pastel blue color for joyful section title */
         }
-        #proud {
-            background-color: #ffb6c1; /* Set pastel pink background color for proud section */
+        #proud h2 {
+            color: #ffb6c1; /* Set pastel pink color for proud section title */
         }
-        #sad {
-            background-color: #e6e6fa; /* Set lavender background color for sad section */
+        #sad h2 {
+            color: #e6e6fa; /* Set lavender color for sad section title */
         }
-        #angry {
-            background-color: #98fb98; /* Set pastel green background color for angry section */
+        #angry h2 {
+            color: #98fb98; /* Set pastel green color for angry section title */
         }
-        #lonely {
-            background-color: #ffcccb; /* Set pastel peach background color for lonely section */
+        #lonely h2 {
+            color: #ffcccb; /* Set pastel peach color for lonely section title */
         }
     </style>
 </head>
@@ -62,23 +61,23 @@
     <main>
         <section id="joyful">
             <h2><a class="section-link" href="#joyful">For when you're joyful</a></h2>
-            <p>Text content for joyful mood...</p>
+            <p style="display: none;">Text content for joyful mood...</p>
         </section>
         <section id="proud">
             <h2><a class="section-link" href="#proud">For when you're proud</a></h2>
-            <p>Text content for proud mood...</p>
+            <p style="display: none;">Text content for proud mood...</p>
         </section>
         <section id="sad">
             <h2><a class="section-link" href="#sad">For when you're sad</a></h2>
-            <p>Text content for sad mood...</p>
+            <p style="display: none;">Text content for sad mood...</p>
         </section>
         <section id="angry">
             <h2><a class="section-link" href="#angry">For when you're angry</a></h2>
-            <p>Text content for angry mood...</p>
+            <p style="display: none;">Text content for angry mood...</p>
         </section>
         <section id="lonely">
             <h2><a class="section-link" href="#lonely">For when you're lonely</a></h2>
-            <p>Text content for lonely mood...</p>
+            <p style="display: none;">Text content for lonely mood...</p>
         </section>
     </main>
     <script>
@@ -89,8 +88,12 @@
                 const section = document.getElementById(sectionId);
                 if (section.style.display === 'none') {
                     section.style.display = 'block';
+                    section.style.backgroundColor = section.getAttribute('data-bg-color');
+                    section.querySelector('p').style.display = 'block';
+                    section.querySelector('p').style.color = 'black';
                 } else {
                     section.style.display = 'none';
+                    section.querySelector('p').style.display = 'none';
                 }
             });
         });
