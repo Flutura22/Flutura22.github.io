@@ -10,21 +10,25 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-image: url('curtain.jpeg'); /* Replace 'your-image.jpg' with the path to your desired image */
+        background-image: url('boooks.jpeg'); /* Replace 'your-image.jpg' with the path to your desired image */
         background-size: cover;
         background-position: center;
         color: black; /* Set text color to black */
       }
       header {
-        background-color: black; /* Set background color of header to black */
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for header */
         padding: 20px;
         text-align: center;
+        position: relative; /* Add position relative to allow z-index to work */
+        z-index: 1; /* Ensure header stays on top of background image */
       }
       h1 {
         color: #f7dc6f; /* Set font color of h1 to #f7dc6f (pastel yellow) */
       }
       main {
         padding: 20px;
+        position: relative; /* Add position relative to allow z-index to work */
+        z-index: 2; /* Ensure main content stays on top of background image */
       }
       h2,
       p {
