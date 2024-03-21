@@ -14,7 +14,9 @@
       color: black; /* Set text color to black */
     }
     header {
-      background-image: none; /* Remove background image for header */
+      background-image: url('Imazh.jpeg'); /* Background image for header */
+      background-size: cover;
+      background-position: center;
       padding: 20px;
       text-align: center;
       position: relative; /* Add position relative to allow z-index to work */
@@ -27,10 +29,8 @@
     main {
       padding: 20px;
       position: relative; /* Add position relative to allow z-index to work */
-      z-index: 2; /* Ensure main content stays on top of header */
-      background-image: url('Imazh.jpeg'); /* Background image for main content */
-      background-size: cover;
-      background-position: top;
+      z-index: 2; /* Ensure main content stays on top */
+      background-color: black; /* Set background color to black */
       min-height: 100vh; /* Set minimum height of main content to full viewport height */
     }
     h2, p {
@@ -76,14 +76,16 @@
       border-bottom-right-radius: 10px;
     }
     header img {
-      display: none; /* Hide the header image */
+      max-width: 100%; /* Set maximum width to 100% */
+      height: auto; /* Allow the height to adjust proportionally */
+      border: 2px solid black; /* Add black border to header image */
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Por la vida, Linda</h1>
-    <!-- <img src="Imazh.jpeg" alt="Us in every universe" /> -->
+    <img src="Imazh.jpeg" alt="Us in every universe" />
   </header>
   <main>
     <div class="section">
